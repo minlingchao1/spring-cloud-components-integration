@@ -6,7 +6,18 @@
 
     <groupId>com.github.minlingchao</groupId>
     <artifactId>spring-cloud-components-integration</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>spring-boot-starter-swagger</module>
+        <module>spring-boot-starter-rocketmq</module>
+        <module>spring-boot-starter-job</module>
+        <module>spring-boot-starter-redis</module>
+        <module>spring-boot-starter-dynamic-datasource</module>
+        <module>spring-boot-starter-elasticsearch</module>
+        <module>spring-boot-starter-websocket</module>
+        <module>spring-boot-starter-j2cache</module>
+    </modules>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>spring cloud components integration</description>
