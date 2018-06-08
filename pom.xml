@@ -7,20 +7,26 @@
     <groupId>com.github.minlingchao1</groupId>
     <artifactId>spring-cloud-components-integration</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
-        <module>spring-boot-starter-swagger</module>
-        <module>spring-boot-starter-job</module>
-        <module>spring-boot-starter-redis</module>
-        <module>spring-boot-starter-dynamic-datasource</module>
-        <module>spring-boot-starter-elasticsearch</module>
-        <module>spring-boot-starter-websocket</module>
-        <module>spring-boot-starter-j2cache</module>
+        <module>spring-boot-swagger-starter</module>
+        <module>spring-boot-job-starter</module>
+        <module>spring-boot-redis-starter</module>
+        <module>spring-boot-dynamic-datasource-starter</module>
+        <module>spring-boot-elasticsearch-starter</module>
+        <module>spring-boot-websocket-starter</module>
+        <module>spring-boot-j2cache-starter</module>
     </modules>
 
-    <name>${project.groupId}:${project.artifactId}</name>
     <description>spring cloud components integration</description>
     <url>https://github.com/minlingchao1/spring-cloud-components-integration</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <developers>
         <developer>
@@ -29,12 +35,105 @@
         </developer>
     </developers>
 
-
     <scm>
-        <connection>scm:git:git@github.com:minlingchao1/spring-cloud-components-integration.git</connection>
-        <developerConnection>scm:git:git@github.com:minlingchao1/spring-cloud-components-integration.git</developerConnection>
-        <url>git@github.com:minlingchao1/spring-cloud-components-integration.git</url>
+        <connection>scm:git:https://github.com/minlingchao1/spring-cloud-components-integration.git</connection>
+        <developerConnection>scm:git:https://github.com/minlingchao1/spring-cloud-components-integration.git</developerConnection>
+        <url>https://github.com/minlingchao1/spring-cloud-components-integration</url>
     </scm>
 
+    <!-- 分支 -->
+    <repositories>
+        <repository>
+            <id>aliyunmaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>edas-oss-central</id>
+            <name>taobao mirror central</name>
+            <url>http://edas-public.oss-cn-hangzhou.aliyuncs.com/repository</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+
+    <profiles>
+        <profile>
+            <!-- 打包的 -P参数 -->
+            <id>release</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Source -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>2.2.1</version>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- GPG  打包插件-->
+                        <!--<plugin>-->
+                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                            <!--<artifactId>maven-gpg-plugin</artifactId>-->
+                            <!--<version>1.5</version>-->
+                            <!--<executions>-->
+                                <!--<execution>-->
+                                    <!--<phase>verify</phase>-->
+                                    <!--<goals>-->
+                                        <!--<goal>sign</goal>-->
+                                    <!--</goals>-->
+                                <!--</execution>-->
+                            <!--</executions>-->
+                        <!--</plugin>-->
+
+                        <!-- Javadoc -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.9.1</version>
+                            <!-- -Xdoclint:none 是为了生存apidoc的时候检查不必太严格-->
+                            <configuration>
+                                <additionalparam>-Xdoclint:none</additionalparam>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+
+                    </plugins>
+                </pluginManagement>
+
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <!--- 此处的id需要和setting.xml 配置的service的id一致 -->
+                    <id>snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>releases</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
+    </profiles>
 
 </project>
