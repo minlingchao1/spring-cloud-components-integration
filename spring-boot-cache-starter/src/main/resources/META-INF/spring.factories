@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.minlingchao.spring.boot.cache.starter.RedisCacheAutoConfiguration

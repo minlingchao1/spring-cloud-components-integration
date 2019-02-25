@@ -1,0 +1,188 @@
+{
+  "groups": [
+    {
+      "name": "integration.cache.redis",
+      "type": " com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Cluster",
+      "name": "integration.cache.redis.cluster.max-redirects",
+      "description": "Maximum number of redirects to follow when executing commands across the cluster.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Cluster",
+      "name": "integration.cache.redis.cluster.nodes",
+      "description": "Comma-separated list of \"host:port\" pairs to bootstrap from. This represents an \"initial\" list of cluster nodes and is required to have at least one entry.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "defaultValue": 0,
+      "name": "integration.cache.redis.database",
+      "description": "Database index used by the connection factory.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "defaultValue": "localhost",
+      "name": "integration.cache.redis.host",
+      "description": "Redis server host.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 8,
+      "name": "integration.cache.redis.jedis.pool.max-active",
+      "description": "Maximum number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 8,
+      "name": "integration.cache.redis.jedis.pool.max-idle",
+      "description": "Maximum number of \"idle\" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": "-1ms",
+      "name": "integration.cache.redis.jedis.pool.max-wait",
+      "description": "Maximum amount of time a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 0,
+      "name": "integration.cache.redis.jedis.pool.min-idle",
+      "description": "Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 8,
+      "name": "integration.cache.redis.lettuce.pool.max-active",
+      "description": "Maximum number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 8,
+      "name": "integration.cache.redis.lettuce.pool.max-idle",
+      "description": "Maximum number of \"idle\" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": "-1ms",
+      "name": "integration.cache.redis.lettuce.pool.max-wait",
+      "description": "Maximum amount of time a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Pool",
+      "defaultValue": 0,
+      "name": "integration.cache.redis.lettuce.pool.min-idle",
+      "description": "Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Lettuce",
+      "defaultValue": "100ms",
+      "name": "integration.cache.redis.lettuce.shutdown-timeout",
+      "description": "Shutdown timeout.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "name": "integration.cache.redis.password",
+      "description": "Login password of the redis server.",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 8,
+      "deprecated": true,
+      "name": "integration.cache.redis.pool.max-active",
+      "description": "Max number of connections that can be allocated by the pool at a given time.\n Use a negative value for no limit.",
+      "type": "java.lang.Integer",
+      "deprecation": {
+        "level": "error",
+        "replacement": "integration.cache.redis.jedis.pool.max-idle"
+      }
+    },
+    {
+      "defaultValue": 8,
+      "deprecated": true,
+      "name": "integration.cache.redis.pool.max-idle",
+      "description": "Max number of \"idle\" connections in the pool. Use a negative value to indicate\n an unlimited number of idle connections.",
+      "type": "java.lang.Integer",
+      "deprecation": {
+        "level": "error",
+        "replacement": "integration.cache.redis.jedis.pool.max-idle"
+      }
+    },
+    {
+      "defaultValue": -1,
+      "deprecated": true,
+      "name": "integration.cache.redis.pool.max-wait",
+      "description": "Maximum amount of time (in milliseconds) a connection allocation should block\n before throwing an exception when the pool is exhausted. Use a negative value\n to block indefinitely.",
+      "type": "java.lang.Integer",
+      "deprecation": {
+        "level": "error",
+        "replacement": "integration.cache.redis.jedis.pool.max-wait"
+      }
+    },
+    {
+      "defaultValue": 0,
+      "deprecated": true,
+      "name": "integration.cache.redis.pool.min-idle",
+      "description": "Target for the minimum number of idle connections to maintain in the pool. This\n setting only has an effect if it is positive.",
+      "type": "java.lang.Integer",
+      "deprecation": {
+        "level": "error",
+        "replacement": "integration.cache.redis.jedis.pool.min-idle"
+      }
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "defaultValue": 6379,
+      "name": "integration.cache.redis.port",
+      "description": "Redis server port.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Sentinel",
+      "name": "integration.cache.redis.sentinel.master",
+      "description": "Name of the Redis server.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig$Sentinel",
+      "name": "integration.cache.redis.sentinel.nodes",
+      "description": "Comma-separated list of \"host:port\" pairs.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "defaultValue": false,
+      "name": "integration.cache.redis.ssl",
+      "description": "Whether to enable SSL support.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "name": "integration.cache.redis.timeout",
+      "description": "Connection timeout.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.minlingchao.spring.boot.cache.starter.config.CacheRedisConfig",
+      "name": "integration.cache.redis.url",
+      "description": "Connection URL. Overrides host, port, and password. User is ignored. Example: redis:\/\/user:password@example.com:6379",
+      "type": "java.lang.String"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.minlingchao.spring.boot.yidun.starter.YiDunAutoConfiguration

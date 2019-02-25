@@ -1,0 +1,72 @@
+{
+  "groups": [
+    {
+      "name": "integration.yidun",
+      "type": "com.minlingchao.spring.boot.yidun.starter.config.YiDunConfig",
+      "sourceType": "com.minlingchao.spring.boot.yidun.starter.config.YiDunConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "integration.yidun.verify.host",
+      "type": "java.lang.String",
+      "description": "请求基础地址",
+      "sourceType": "com.minlingchao.spring.boot.yidun.starter.config.YiDunConfig"
+    },
+    {
+      "name": "integration.yidun.verify.secret-id",
+      "type": "java.lang.String",
+      "description": " 易盾为产品分配的密钥id",
+      "sourceType": "com.minlingchao.spring.boot.yidun.starter.config.YiDunConfig"
+    },
+    {
+      "name": "integration.yidun.verify.secret-key",
+      "type": "java.lang.String",
+      "description": "与secretId一一对应的密钥，请妥善保管此密钥，是双方通信的签名凭证",
+      "sourceType": "com.minlingchao.spring.boot.yidun.starter.config.YiDunConfig"
+    },
+    {
+      "name": "integration.yidun.http.socket-time-out",
+      "type": "java.lang.Integer",
+      "description": "socket超时时间",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.http.connect-time-out",
+      "type": "java.lang.Integer",
+      "description": "连接超时时间",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.http.connection-request-time-out",
+      "type": "java.lang.Integer",
+      "description": "请求超时时间",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.http.max-header-count",
+      "type": "java.lang.Integer",
+      "description": "最大header数",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.http.max-conn-total",
+      "type": "java.lang.Integer",
+      "description": "最大连接数",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.http.max-conn-per-route",
+      "type": "java.lang.Integer",
+      "description": "分配给同一个route(路由)最大的并发连接数",
+      "sourceType": "com.sms.starter.config.SmsConfig"
+    },
+    {
+      "name": "integration.yidun.log.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启日志",
+      "sourceType": "com.sms.starter.config.SmsConfig",
+      "defaultValue": "true"
+    }
+  ]
+}
